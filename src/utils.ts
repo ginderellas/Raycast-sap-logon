@@ -17,7 +17,7 @@ function getEncryptionKey(): Buffer {
 export function encryptPassword(password: string): string {
   const iv = crypto.randomBytes(16);
   const key = getEncryptionKey();
-  const cipher = crypto.createCipheriv("aes-256-cbc", key, iv);
+  const cipher = crypto.createCipheriv("aes-256-cbc", key as crypto.CipherKey, iv as crypto.BinaryLike);
   let encrypted = cipher.update(password, "utf8", "hex");
   encrypted += cipher.final("hex");
   return iv.toString("hex") + ":" + encrypted;
@@ -28,7 +28,7 @@ export function decryptPassword(encryptedPassword: string): string {
     const [ivHex, encrypted] = encryptedPassword.split(":");
     const iv = Buffer.from(ivHex, "hex");
     const key = getEncryptionKey();
-    const decipher = crypto.createDecipheriv("aes-256-cbc", key, iv);
+    const decipher = crypto.createDecipheriv("aes-256-cbc", key as crypto.CipherKey, iv as crypto.BinaryLike);
     let decrypted = decipher.update(encrypted, "hex", "utf8");
     decrypted += decipher.final("utf8");
     return decrypted;
