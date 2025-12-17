@@ -1,6 +1,6 @@
 {
   "$schema": "https://www.raycast.com/schemas/extension.json",
-  "name": "sap-connector",
+  "name": "sap-logon",
   "title": "SAP GUI Connector",
   "description": "Quickly connect to SAP systems with saved credentials",
   "icon": "extension-icon.png",

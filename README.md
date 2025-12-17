@@ -1,3 +1,3 @@
-# SAP Sytem Opener
+# SAP GUI Logon via Raycast
 
-Open SAP Systems easily
+Quickly connect to SAP systems with saved credentials
