@@ -1,4 +1,4 @@
-import { LocalStorage, getPreferenceValues } from "@raycast/api";
+import { LocalStorage } from "@raycast/api";
 import { SAPSystem } from "./types";
 import * as fs from "fs";
 import * as os from "os";
