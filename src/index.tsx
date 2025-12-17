@@ -13,12 +13,7 @@ import {
 } from "@raycast/api";
 import { useEffect, useState } from "react";
 import { SAPSystem } from "./types";
-import {
-  createAndOpenSAPCFile,
-  deleteSAPSystem,
-  getPassword,
-  getSAPSystems,
-} from "./utils";
+import { createAndOpenSAPCFile, deleteSAPSystem, getPassword, getSAPSystems } from "./utils";
 import EditSystemForm from "./edit-system";
 
 export default function Command() {
@@ -110,11 +105,7 @@ export default function Command() {
             actions={
               <ActionPanel>
                 <ActionPanel.Section title="Connection">
-                  <Action
-                    title="Connect to SAP"
-                    icon={Icon.Link}
-                    onAction={() => handleConnect(system)}
-                  />
+                  <Action title="Connect to SAP" icon={Icon.Link} onAction={() => handleConnect(system)} />
                 </ActionPanel.Section>
                 <ActionPanel.Section title="Manage">
                   <Action

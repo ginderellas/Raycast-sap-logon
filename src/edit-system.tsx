@@ -1,19 +1,7 @@
-import {
-  Action,
-  ActionPanel,
-  Form,
-  showToast,
-  Toast,
-  useNavigation,
-} from "@raycast/api";
+import { Action, ActionPanel, Form, showToast, Toast, useNavigation } from "@raycast/api";
 import { useEffect, useState } from "react";
 import { SAPSystem } from "./types";
-import {
-  getPassword,
-  updateSAPSystem,
-  validateClient,
-  validateInstanceNumber,
-} from "./utils";
+import { getPassword, updateSAPSystem, validateClient, validateInstanceNumber } from "./utils";
 
 interface EditSystemFormProps {
   system: SAPSystem;
@@ -104,7 +92,7 @@ export default function EditSystemForm({ system, onSave }: EditSystemFormProps) 
           username: values.username.trim(),
           language: values.language || "EN",
         },
-        values.password
+        values.password,
       );
 
       await showToast({
@@ -137,10 +125,7 @@ export default function EditSystemForm({ system, onSave }: EditSystemFormProps) 
         </ActionPanel>
       }
     >
-      <Form.Description
-        title="Edit SAP System"
-        text="Update the configuration for this SAP system connection."
-      />
+      <Form.Description title="Edit SAP System" text="Update the configuration for this SAP system connection." />
 
       <Form.TextField
         id="systemId"
@@ -220,10 +205,7 @@ export default function EditSystemForm({ system, onSave }: EditSystemFormProps) 
         <Form.Dropdown.Item value="KO" title="Korean (KO)" />
       </Form.Dropdown>
 
-      <Form.Description
-        title=""
-        text={`Last updated: ${new Date(system.updatedAt).toLocaleString()}`}
-      />
+      <Form.Description title="" text={`Last updated: ${new Date(system.updatedAt).toLocaleString()}`} />
     </Form>
   );
 }

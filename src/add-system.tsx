@@ -1,11 +1,4 @@
-import {
-  Action,
-  ActionPanel,
-  Form,
-  showToast,
-  Toast,
-  useNavigation,
-} from "@raycast/api";
+import { Action, ActionPanel, Form, showToast, Toast, useNavigation } from "@raycast/api";
 import { useState } from "react";
 import { addSAPSystem, validateClient, validateInstanceNumber } from "./utils";
 
@@ -83,7 +76,7 @@ export default function Command() {
           username: values.username.trim(),
           language: values.language || "EN",
         },
-        values.password
+        values.password,
       );
 
       await showToast({

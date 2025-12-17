@@ -68,7 +68,7 @@ export async function deletePassword(systemId: string): Promise<void> {
 
 export async function addSAPSystem(
   system: Omit<SAPSystem, "id" | "createdAt" | "updatedAt">,
-  password: string
+  password: string,
 ): Promise<SAPSystem> {
   const systems = await getSAPSystems();
   const id = crypto.randomUUID();
@@ -91,7 +91,7 @@ export async function addSAPSystem(
 export async function updateSAPSystem(
   id: string,
   updates: Partial<Omit<SAPSystem, "id" | "createdAt">>,
-  password?: string
+  password?: string,
 ): Promise<void> {
   const systems = await getSAPSystems();
   const index = systems.findIndex((s) => s.id === id);
