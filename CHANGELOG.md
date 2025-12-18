@@ -1,3 +1,3 @@
-# SAP Sytem Opener Changelog
+# SAP GUI Connector
 
 ## [Initial Version] - {PR_MERGE_DATE}

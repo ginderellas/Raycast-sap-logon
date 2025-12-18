@@ -22,7 +22,7 @@ export default function Command() {
       await open(filePath);
       await showHUD(`🔗 Connecting to ${system.systemId} (Client ${system.client})`);
     } catch (error) {
-      await showHUD(`❌ Failed to connect to ${system.systemId}`);
+      await showHUD(`❌ Failed to connect to ${system.systemId}: ${error}`);
     }
   }
 

@@ -13,7 +13,7 @@ import {
 } from "@raycast/api";
 import { useEffect, useState } from "react";
 import { SAPSystem } from "./types";
-import { createAndOpenSAPCFile, deleteSAPSystem, getPassword, getSAPSystems } from "./utils";
+import { createAndOpenSAPCFile, deleteSAPSystem, getSAPSystems } from "./utils";
 import EditSystemForm from "./edit-system";
 
 export default function Command() {
